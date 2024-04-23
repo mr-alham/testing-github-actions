@@ -1,16 +1,20 @@
-name: learning-github-actions
+---
+name: Super Linter
 
 on: push
 
 jobs:
-  run-name:
+  lint:
+    name: Lint Codebase
     runs-on: ubuntu-latest
-    steps:
-      - name: checking out the code
-        uses: actions/checkout@v4
 
-      - name: running-super-linter
-        uses: github/super-linter@v4
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
         env:
           DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: false
+...
