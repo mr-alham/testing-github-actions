@@ -3,7 +3,6 @@ name: learning-github-actions
 on: push
 
 jobs:
-	run-name: learning-github-actions
 		runs-on: ubuntu-latest
 		steps: 
       - name: checking out the code
