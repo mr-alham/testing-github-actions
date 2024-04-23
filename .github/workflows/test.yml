@@ -1,15 +1,17 @@
 name: learning-github-actions
 
-on: push
+on: 
+  push:
 
 jobs:
-		runs-on: ubuntu-latest
-		steps: 
+  run-name:
+    runs-on: ubuntu-latest
+    steps:
       - name: checking out the code
-		    uses: action/checkout@v4
+        uses: actions/checkout@v4
 
-      -name : running-super-linter
-       uses : github/super-linter@v3
-       env:
-        DEFAULT_BRANCH: main
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: running-super-linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
