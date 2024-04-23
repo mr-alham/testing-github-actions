@@ -3,7 +3,7 @@ name: learning-github-actions
 on: push
 
 jobs:
-	learning-github-actions:
+	run-name: learning-github-actions
 		runs-on: ubuntu-latest
 		steps: 
       - name: checking out the code
@@ -14,4 +14,3 @@ jobs:
        env:
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
