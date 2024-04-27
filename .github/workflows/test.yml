@@ -1,17 +1,14 @@
 ---
-name: Super Linter
+name: Playing with GithHub Super-Linter.
 
 on:
   push:
-    branches:
-      main
+    branches: main
 
   pull_request:
-    branches:
-      main
+    branches: main
 
   workflow_dispatch:
-
 
 jobs:
   lint:
@@ -25,10 +22,13 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: false
-      
+
+      - name: creating the documentation.
+        uses: ammaraskar/sphinx-action@master
+
       - name: Run a Shell command
         run: echo -e "Hello Alham! from GitHub-Actions.\n" && pwd && ls
         shell: bash
-...
