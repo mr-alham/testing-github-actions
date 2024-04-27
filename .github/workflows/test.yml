@@ -29,6 +29,6 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
       
       - name: Run a Shell command
-        run: echo "Hello Alham! from GitHub-Actions."
+        run: echo -e "Hello Alham! from GitHub-Actions.\n" && pwd && ls
         shell: bash
 ...
