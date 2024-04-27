@@ -28,6 +28,8 @@ jobs:
 
       - name: creating the documentation.
         uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "docs/"
 
       - name: Run a Shell command
         run: echo -e "Hello Alham! from GitHub-Actions.\n" && pwd && ls
